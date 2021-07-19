@@ -11,13 +11,37 @@ console.log(whiteList);
 var email = prompt("Inserisci la tua email.");
 console.log(email);
 
-// Verifico se l'email inserita è nella White List. Se presente l'esito sarà positivo, altrimenti no.
+// (Uso di includes) Verifico se l'email inserita è nella White List. Se presente l'esito sarà positivo, altrimenti no.
 
-if (whiteList.includes(email))
+// if (whiteList.includes(email))
+// {
+//     alert("Welcome back!");
+// }
+// else
+// {
+//     alert("ERRORE! RIPROVA CON UN'ALTRA EMAIL!");
+// }
+
+// (Uso del for) Verifico se l'email inserita è nella White List. Se presente l'esito sarà positivo, altrimenti no.
+
+var mailTrovata = false;
+
+for (var i = 0; i < whiteList.length; i++)
+{
+    var emailList = whiteList[i];
+
+    if (emailList == email)
+    {
+        mailTrovata = true;
+    }
+}
+
+// Messaggio da stampare
+
+if (mailTrovata == true)
 {
     alert("Welcome back!");
 }
-else
-{
+else {
     alert("ERRORE! RIPROVA CON UN'ALTRA EMAIL!");
 }
